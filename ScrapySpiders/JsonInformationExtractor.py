@@ -2,7 +2,8 @@ import json
 
 from typing import Dict, List
 
-FILEPATH = "/home/carloscoronado/Scripts/LabTecnoSocial/2_WebScraper/datos+fecha+cuerpo_v6.json"
+FILEPATH = "datos+fecha+cuerpo_v6.json"
+
 
 class JsonExtractor:
     def __init__(self, media: str) -> None:
@@ -25,5 +26,7 @@ class JsonExtractor:
 
         return match_elements
 
-#aux = JsonExtractor("www.paginasiete.bo")
-#print(aux.filtered_by_empty_info)
+
+# aux = JsonExtractor("www.paginasiete.bo")
+# print(aux.filtered_by_empty_info)
+
