@@ -7,8 +7,9 @@ FILEPATH = "datos+fecha+cuerpo_v6.json"
 
 class JsonExtractor:
     def __init__(self, media: str) -> None:
-        self.info = self.get_json_data_from_file(FILEPATH)
-        self.filtered_by_empty_info = self.get_empty_by_specific_media_data(media)
+        if media:
+            self.info = self.get_json_data_from_file(FILEPATH)
+            self.filtered_by_empty_info = self.get_empty_by_specific_media_data(media)
 
     def get_json_data_from_file(self, path_to_file: str) -> Dict:
         with open(path_to_file) as f:
