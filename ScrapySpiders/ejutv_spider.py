@@ -1,15 +1,13 @@
 import scrapy
-from JsonInformationExtractor import JsonExtractor
+from InformationExtractor import InformationExtractor
 
 MEDIA = "eju.tv"
-JsonExt = JsonExtractor(MEDIA)
-
-print(JsonExt.filtered_by_empty_info)
+extractor = InformationExtractor()
 
 
 class PaginaSieteSpider(scrapy.Spider):
     name = "paginasiete"
-    start_urls = [elem["enlace"] for elem in JsonExt.filtered_by_empty_info]
+    start_urls = [elem["enlace"] for elem in extractor.get_media_info_from_api(MEDIA)]
 
     def parse(self, response):
         # title = response.xpath('//title').extract()
