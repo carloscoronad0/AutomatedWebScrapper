@@ -1,7 +1,7 @@
 import scrapy
 from InformationExtractor import InformationExtractor
 
-MEDIA = "www.ahoraelpueblo.bo"
+MEDIA = "ahoraelpueblo"
 extractor = InformationExtractor()
 
 
